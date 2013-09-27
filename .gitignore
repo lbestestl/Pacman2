@@ -11,3 +11,18 @@
 *.lai
 *.la
 *.a
+
+# backup
+*.*~
+*.*_bak
+
+#.eclipse project
+.cproject
+.project
+
+#folder
+lib/
+res/
+bin/
+Debug/
+Release/
