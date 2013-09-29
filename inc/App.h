@@ -12,9 +12,11 @@
 
 #include "Event.h"
 
+#include <SDL2/SDL_ttf.h>
 
-class App : public Event
-{
+
+class App
+	: public Event {
 private:
     App();
     ~App();
@@ -26,8 +28,8 @@ public:
 private:
     bool init();
     void eventProc(SDL_Event* event);
-    void calLoop();
-    void renderer();
+    void update();
+    void draw();
     bool cleanUp();
 
     void onExit();
@@ -37,6 +39,7 @@ private:
     SDL_Window* win;
     SDL_Renderer* ren;
     SDL_Texture* tex;
+    TTF_Font* font;
 };
 
 

@@ -10,5 +10,51 @@
 
 
 Entity::Entity()
+	: id(0),
+	  posX(0),
+	  posY(0),
+	  width(0),
+	  height(0)
 {
+}
+
+
+Entity::~Entity()
+{
+
+}
+
+
+bool Entity::init(std::string file)
+{
+	return true;
+}
+
+
+void Entity::update()
+{
+}
+
+
+void Entity::draw()
+{
+
+}
+
+
+bool Entity::cleanUp()
+{
+	return true;
+}
+
+
+bool Entity::interactive()
+{
+	return true;
+}
+
+
+void Entity::animate()
+{
+
 }

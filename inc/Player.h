@@ -9,14 +9,22 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "MoveableEntity.h"
 
-class Player : public Entity
-{
+
+class Player
+	: public MoveableEntity {
 public:
     Player();
     virtual ~Player();
     
+    bool init(std::string file);
+    void update();
+    void draw();
+    bool cleanUp();
+
     bool interactive();
+    void move(float x, float y);
     
 private:
     int score;

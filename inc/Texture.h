@@ -13,8 +13,7 @@
 #include <SDL2/SDL.h>
 
 
-class Texture
-{
+class Texture {
 public:
     Texture();
     static SDL_Texture* load(std::string file, SDL_Renderer* renderer);

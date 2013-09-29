@@ -20,8 +20,8 @@ int App::exec()
         while (SDL_PollEvent(&e) != 0) {
             eventProc(&e);
         }
-        calLoop();
-        renderer();
+        update();
+        draw();
     }
 
     if (!cleanUp())

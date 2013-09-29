@@ -14,7 +14,9 @@
 App::App()
     : isRunning(true),
       win(NULL),
-      ren(NULL)
+      ren(NULL),
+      tex(NULL),
+      font(NULL)
 {
 }
 
@@ -53,29 +55,35 @@ bool App::init()
 
     SDL_RenderClear(ren);
 
-    if ((tex = Texture::load("./background.jpg", ren)) == NULL) {
+    if ((tex = Texture::load("./res/background.jpg", ren)) == NULL) {
         isRunning = false;
+    }
+
+    if (TTF_Init() == -1) {
+    	isRunning = false;
     }
 
     return isRunning;
 }
 
 
-void App::calLoop()
+void App::update()
 {
 
 }
 
 
-void App::renderer()
+void App::draw()
 {
-    Texture::draw(tex, ren, 0, 0);
+    Texture::draw(tex, ren, 0, 0, 200, 200, 800, 600);
     SDL_RenderPresent(ren);
 }
 
 
 bool App::cleanUp()
 {
+	TTF_CloseFont(font);
+	TTF_Quit();
     SDL_DestroyTexture(tex);
     SDL_DestroyRenderer(ren);
     SDL_DestroyWindow(win);

@@ -12,8 +12,7 @@
 #include <SDL2/SDL.h>
 
 
-class Event
-{
+class Event {
 public:
     Event();
     virtual ~Event();
