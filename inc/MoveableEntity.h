@@ -33,7 +33,6 @@ public:
     virtual void draw();
     virtual bool cleanUp();
 
-    virtual bool interactive();
     virtual void move(float x, float y);
 
 private:

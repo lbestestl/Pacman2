@@ -55,7 +55,7 @@ bool App::init()
 
     SDL_RenderClear(ren);
 
-    if ((tex = Texture::load("./res/background.jpg", ren)) == NULL) {
+    if ((tex = Texture::load("./res/pacman.png", ren)) == NULL) {
         isRunning = false;
     }
 
@@ -75,7 +75,8 @@ void App::update()
 
 void App::draw()
 {
-    Texture::draw(tex, ren, 0, 0, 200, 200, 800, 600);
+	//pacman은 20*20
+    Texture::draw(tex, ren, 0, 0, 80, 120, 20, 20);
     SDL_RenderPresent(ren);
 }
 

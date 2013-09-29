@@ -10,6 +10,9 @@
 #define MAP_H_
 
 
+#include "Tile.h"
+
+#include <string>
 #include <vector>
 
 

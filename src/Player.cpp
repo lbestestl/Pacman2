@@ -45,17 +45,3 @@ bool Player::cleanUp()
 {
 	return true;
 }
-
-
-bool Player::interactive()
-{
-	return true;
-}
-
-
-void Player::move(float x, float y)
-{
-	if (x == 0 && y == 0)
-		return;
-
-}

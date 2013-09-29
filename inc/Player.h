@@ -22,9 +22,6 @@ public:
     void update();
     void draw();
     bool cleanUp();
-
-    bool interactive();
-    void move(float x, float y);
     
 private:
     int score;

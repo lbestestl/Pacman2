@@ -50,12 +50,6 @@ bool MoveableEntity::cleanUp()
 }
 
 
-bool MoveableEntity::interactive()
-{
-	return true;
-}
-
-
 void MoveableEntity::move(float x, float y)
 {
 	if (x == 0 && y == 0)
@@ -63,4 +57,3 @@ void MoveableEntity::move(float x, float y)
 	x *= FPS::getFPS().getSpeedFactor();
 	y *= FPS::getFPS().getSpeedFactor();
 }
-
