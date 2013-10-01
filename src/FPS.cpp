@@ -43,7 +43,7 @@ void FPS::update()
 		return;
 	}
 
-	speedFactor = ((SDL_GetTicks() - prevTime) / 1000.0f) * 32.0f;
+	speedFactor = ((SDL_GetTicks() - prevTime) / 1000.0f) * 64.0f;
 	prevTime = SDL_GetTicks();
 	curFrame++;
 }

@@ -9,10 +9,10 @@
 #define DEFINE_H
 
 
-static const int MAP_WIDTH = 49;
+static const int MAP_WIDTH = 39;
 static const int MAP_HEIGHT = 25;
 
-static const int TILE_SIZE = 16;
+static const int TILE_SIZE = 20;
 
 static const int MY_WINDOW_WIDTH = 800;
 static const int MY_WINDOW_HEIGHT = 600;

@@ -24,7 +24,8 @@ public:
 private:
 	unsigned int curFrame;
 	unsigned int prevTime;
-	float speedFactor;
+	float speedFactor; // default fps(64) / current fps
+						// 하드웨어 성능차이에 의한 속도 차이 해결
 	unsigned int fpsNum;
 };
 

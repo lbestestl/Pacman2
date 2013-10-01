@@ -41,7 +41,6 @@ private:
     float speedY;
     float accelX;
     float accelY;
-
 };
 
 
