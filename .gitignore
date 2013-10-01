@@ -19,6 +19,7 @@
 #.eclipse project
 .cproject
 .project
+.settings/
 
 #folder
 lib/

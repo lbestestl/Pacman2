@@ -39,7 +39,6 @@ private:
     SDL_Window* win;
     SDL_Renderer* ren;
     SDL_Texture* tex;
-    TTF_Font* font;
 };
 
 

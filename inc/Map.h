@@ -21,6 +21,8 @@ public:
 	Map();
 	bool init(std::string file);
 	void draw();
+	bool cleanUp();
+
 private:
 	std::vector<Tile> tileset;
 };

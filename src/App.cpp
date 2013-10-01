@@ -15,8 +15,7 @@ App::App()
     : isRunning(true),
       win(NULL),
       ren(NULL),
-      tex(NULL),
-      font(NULL)
+      tex(NULL)
 {
 }
 
@@ -59,10 +58,6 @@ bool App::init()
         isRunning = false;
     }
 
-    if (TTF_Init() == -1) {
-    	isRunning = false;
-    }
-
     return isRunning;
 }
 
@@ -83,8 +78,6 @@ void App::draw()
 
 bool App::cleanUp()
 {
-	TTF_CloseFont(font);
-	TTF_Quit();
     SDL_DestroyTexture(tex);
     SDL_DestroyRenderer(ren);
     SDL_DestroyWindow(win);

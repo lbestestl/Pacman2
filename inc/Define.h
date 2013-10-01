@@ -9,8 +9,8 @@
 #define DEFINE_H
 
 
-#define MAP_WIDTH	40
-#define MAP_HEIGHT	40
+static const int MAP_WIDTH = 49;
+static const int MAP_HEIGHT = 25;
 
 static const int TILE_SIZE = 16;
 
