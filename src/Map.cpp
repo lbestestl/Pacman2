@@ -9,8 +9,11 @@
 #include "Map.h"
 #include "Define.h"
 
+#include <fstream>
+
 
 Map::Map()
+	: tileset(NULL)
 {
 	// TODO Auto-generated constructor stub
 
@@ -19,6 +22,7 @@ Map::Map()
 
 bool Map::init(std::string file)
 {
+	tileset = new TileType[MAP_WIDTH*MAP_HEIGHT];
 	std::ifstream fin;
 	fin.open(file.c_str(), std::ios::in | std::ios::binary);
 	if (!fin.is_open()) {
@@ -36,7 +40,7 @@ bool Map::init(std::string file)
 
 bool Map::cleanUp()
 {
-	delete tileset;
+	delete[] tileset;
 	tileset = NULL;
 	return true;
 }

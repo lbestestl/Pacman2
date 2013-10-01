@@ -22,12 +22,4 @@ enum TileType {
 };
 
 
-class Tile {
-public:
-	Tile();
-private:
-	TileType type;
-};
-
-
 #endif /* TILE_H_ */

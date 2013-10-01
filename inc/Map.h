@@ -13,7 +13,6 @@
 #include "Tile.h"
 
 #include <string>
-#include <vector>
 
 
 class Map {
@@ -22,9 +21,10 @@ public:
 	bool init(std::string file);
 	void draw();
 	bool cleanUp();
+	const TileType getTileset(int x, int y);
 
 private:
-	std::vector<Tile> tileset;
+	TileType* tileset;
 };
 
 
