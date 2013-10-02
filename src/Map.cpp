@@ -8,10 +8,11 @@
 
 #include "Map.h"
 #include "Define.h"
+#include "App.h"
+#include "Texture.h"
 
 #include <fstream>
 #include <iostream>
-#include <stdio.h>
 #include <string.h>
 
 
@@ -19,7 +20,6 @@ Map::Map()
 	: tileset(NULL)
 {
 	// TODO Auto-generated constructor stub
-
 }
 
 
@@ -40,8 +40,7 @@ bool Map::init(std::string file)
 		return false;
 	}
 
-	char* dd = new char[size];
-	tileset = new TileType[size];
+	tileset = new char[size];
 	if (tileset == NULL) {
 		//메모리 할당 불가
 		return false;
@@ -50,22 +49,26 @@ bool Map::init(std::string file)
 	//파일 읽기(buffer 1024)
 	fin.seekg(0, std::ios::beg);
 	for (int i = 0; i < size; i += 1024) {
-		if (i >= size-1024)
-			fin.read(dd+i, size-i);
-		else
-			fin.read(dd+i, 1024);
+		fin.read(tileset+i, 1024);
 	}
 
-	for (int y = 0; y < MAP_HEIGHT; y++) {
-		for (int x = 0; x < MAP_WIDTH; x++) {
-			tileset[y*MAP_WIDTH + x];
-			printf("%02X ", dd[x + y*MAP_WIDTH]);
-		}
-		printf("\n");
-	}
-	delete[] dd;
 	fin.close();
 	return true;
+}
+
+
+void Map::draw()
+{
+	int tpx;
+	int tpy;
+	for (int y = 0, id = 0; y < MAP_HEIGHT; y++) {
+		for (int x = 0; x < MAP_WIDTH; x++) {
+			if (tileset[id] != 0x00) {
+				Texture::draw(App::theApp().tex, App::theApp().ren, 20, 0, 80, 120, 20, 20);
+			}
+			id++;
+		}
+	}
 }
 
 
@@ -74,4 +77,10 @@ bool Map::cleanUp()
 	delete[] tileset;
 	tileset = NULL;
 	return true;
+}
+
+
+const char Map::getTileset(int x, int y)
+{
+	return tileset[x + y * MAP_WIDTH];
 }

@@ -22,7 +22,7 @@ private:
     ~App();
 
 public:
-    static App& getApp();
+    static App& theApp();
     int exec();
 
 private:
@@ -34,7 +34,7 @@ private:
 
     void onExit();
 
-private:
+public:
     bool isRunning;
     SDL_Window* win;
     SDL_Renderer* ren;

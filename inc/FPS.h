@@ -16,7 +16,7 @@ private:
 	~FPS();
 
 public:
-	static FPS& getFPS();
+	static FPS& theFPS();
 	void update();
 	const float getSpeedFactor();
 	const unsigned int getFpsNum();

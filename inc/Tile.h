@@ -11,14 +11,14 @@
 
 
 enum TileType {
-	TT_NONE = 0,
-	TT_HO = 1, // ─
-	TT_VO = 2, // │
-	TT_RD = 3, // ┌
-	TT_LD = 4, // ┐
-	TT_LU = 5, // ┘
-	TT_RU = 6, // └
-	TT_EXIT = 15
+	TT_NONE = 0x00,
+	TT_HO = 0x10, // ─
+	TT_VO = 0x20, // │
+	TT_RD = 0x30, // ┌
+	TT_LD = 0x40, // ┐
+	TT_LU = 0x50, // ┘
+	TT_RU = 0x60, // └
+	TT_EXIT = 0xF0
 };
 
 

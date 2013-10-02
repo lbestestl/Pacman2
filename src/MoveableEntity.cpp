@@ -54,6 +54,6 @@ void MoveableEntity::move(float x, float y)
 {
 	if (x == 0 && y == 0)
 		return;
-	x *= FPS::getFPS().getSpeedFactor();
-	y *= FPS::getFPS().getSpeedFactor();
+	x *= FPS::theFPS().getSpeedFactor();
+	y *= FPS::theFPS().getSpeedFactor();
 }

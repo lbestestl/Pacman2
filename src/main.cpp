@@ -3,6 +3,6 @@
 
 int main()
 {
-    return App::getApp().exec();
+    return App::theApp().exec();
 }
 

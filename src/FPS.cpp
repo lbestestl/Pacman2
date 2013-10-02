@@ -27,7 +27,7 @@ FPS::~FPS()
 }
 
 
-FPS& FPS::getFPS()
+FPS& FPS::theFPS()
 {
 	static FPS f;
 	return f;

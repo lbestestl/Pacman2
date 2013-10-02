@@ -21,10 +21,10 @@ public:
 	bool init(std::string file);
 	void draw();
 	bool cleanUp();
-	const TileType getTileset(int x, int y);
+	const char getTileset(int x, int y);
 
 private:
-	TileType* tileset;
+	char* tileset;
 };
 
 

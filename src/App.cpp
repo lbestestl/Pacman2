@@ -9,6 +9,7 @@
 #include "App.h"
 #include "Define.h"
 #include "Texture.h"
+#include "Map.h"
 
 
 App::App()
@@ -26,7 +27,7 @@ App::~App()
 }
 
 
-App& App::getApp()
+App& App::theApp()
 {
     static App app;
     return app;
@@ -57,6 +58,8 @@ bool App::init()
     if ((tex = Texture::load("./res/pacman.png", ren)) == NULL) {
         isRunning = false;
     }
+    Map a;
+    a.init("./res/stage2.dpm");
 
     return isRunning;
 }
