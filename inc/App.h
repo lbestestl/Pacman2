@@ -11,6 +11,7 @@
 
 
 #include "Event.h"
+#include "Map.h"
 
 #include <SDL2/SDL_ttf.h>
 
@@ -35,10 +36,13 @@ private:
     void onExit();
 
 public:
-    bool isRunning;
-    SDL_Window* win;
     SDL_Renderer* ren;
     SDL_Texture* tex;
+
+private:
+    bool isRunning;
+	SDL_Window* win;
+	Map map;
 };
 
 

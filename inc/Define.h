@@ -12,10 +12,13 @@
 static const int MAP_WIDTH = 39;
 static const int MAP_HEIGHT = 25;
 
+static const int MARGIN_WIDTH = 10;
+static const int MARGIN_HEIGHT = 10;
+
 static const int TILE_SIZE = 20;
 
-static const int MY_WINDOW_WIDTH = 800;
-static const int MY_WINDOW_HEIGHT = 600;
+static const int WINDOW_WIDTH = 800;
+static const int WINDOW_HEIGHT = 600;
 
 
 #endif // DEFINE_H

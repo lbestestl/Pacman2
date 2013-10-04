@@ -61,14 +61,36 @@ void Map::draw()
 {
 	int tpx;
 	int tpy;
+
 	for (int y = 0, id = 0; y < MAP_HEIGHT; y++) {
 		for (int x = 0; x < MAP_WIDTH; x++) {
-			if (tileset[id] != 0x00) {
-				Texture::draw(App::theApp().tex, App::theApp().ren, 20, 0, 80, 120, 20, 20);
+			if (tileset[id] == 0x10) {
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+						x*TILE_SIZE + 10, y*TILE_SIZE + 30, 376, 15, 20, 20);
+			} else if (tileset[id] == 0x20) {
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+						x*TILE_SIZE + 10, y*TILE_SIZE + 30, 366, 25, 20, 20);
+			} else if (tileset[id] == 0x30) {
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+						x*TILE_SIZE + 10, y*TILE_SIZE + 30, 366, 15, 20, 20);
+			} else if (tileset[id] == 0x40) {
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+						x*TILE_SIZE + 10, y*TILE_SIZE + 30, 429, 15, 20, 20);
+			} else if (tileset[id] == 0x50) {
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+						x*TILE_SIZE + 10, y*TILE_SIZE + 30, 429, 86, 20, 20);
+			} else if (tileset[id] == 0x60) {
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+						x*TILE_SIZE + 10, y*TILE_SIZE + 30, 366, 86, 20, 20);
+			} else if (tileset[id] == 0x00) {
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+						x*TILE_SIZE + 10, y*TILE_SIZE + 30, 400, 400, 20, 20);
 			}
 			id++;
+
 		}
 	}
+	Texture::draw(App::theApp().tex, App::theApp().ren, 60, 100, 280, 0, 40, 40);
 }
 
 

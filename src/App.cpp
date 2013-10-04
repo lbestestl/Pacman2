@@ -10,6 +10,8 @@
 #include "Define.h"
 #include "Texture.h"
 #include "Map.h"
+#include "FPS.h"
+#include <iostream>
 
 
 App::App()
@@ -43,8 +45,8 @@ bool App::init()
     }
 
     if ((win = SDL_CreateWindow("Pacman2.0", SDL_WINDOWPOS_CENTERED,
-                                   SDL_WINDOWPOS_CENTERED, MY_WINDOW_WIDTH,
-                                   MY_WINDOW_HEIGHT, SDL_WINDOW_SHOWN)) == NULL) {
+                                   SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH,
+                                   WINDOW_HEIGHT, SDL_WINDOW_SHOWN)) == NULL) {
         isRunning = false;
     }
 
@@ -58,8 +60,7 @@ bool App::init()
     if ((tex = Texture::load("./res/pacman.png", ren)) == NULL) {
         isRunning = false;
     }
-    Map a;
-    a.init("./res/stage2.dpm");
+    map.init("./res/stage2.dpm");
 
     return isRunning;
 }
@@ -67,7 +68,8 @@ bool App::init()
 
 void App::update()
 {
-
+	FPS::theFPS().update();
+	std::cout<<FPS::theFPS().getSpeedFactor()<<std::endl;
 }
 
 
@@ -75,6 +77,7 @@ void App::draw()
 {
 	//pacman은 20*20
     Texture::draw(tex, ren, 0, 0, 80, 120, 20, 20);
+    map.draw();
     SDL_RenderPresent(ren);
 }
 
