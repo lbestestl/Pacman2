@@ -57,7 +57,7 @@ bool App::init()
 
     SDL_RenderClear(ren);
 
-    if ((tex = Texture::load("./res/pacman.png", ren)) == NULL) {
+    if ((tex = Texture::load("./res/tileset.png", ren)) == NULL) {
         isRunning = false;
     }
     map.init("./res/stage2.dpm");
@@ -76,7 +76,6 @@ void App::update()
 void App::draw()
 {
 	//pacman은 20*20
-    Texture::draw(tex, ren, 0, 0, 80, 120, 20, 20);
     map.draw();
     SDL_RenderPresent(ren);
 }
