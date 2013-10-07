@@ -11,6 +11,7 @@
 
 
 #include "Entity.h"
+#include "Tile.h"
 
 
 enum EntityDirection {
@@ -36,11 +37,18 @@ public:
     virtual void move(float x, float y);
 
 private:
+    bool posValid(int speedX, int speedY);
+    bool posValid(TileType tile);
+    bool posValid(Entity* ent, int x, int y);
+
+private:
     EntityDirection dir;
     float speedX;
     float speedY;
     float accelX;
     float accelY;
+    float maxSpeedX;
+    float maxSpeedY;
 };
 
 

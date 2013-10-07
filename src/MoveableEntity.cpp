@@ -16,7 +16,9 @@ MoveableEntity::MoveableEntity()
 	  speedX(0),
 	  speedY(0),
 	  accelX(0),
-	  accelY(0)
+	  accelY(0),
+	  maxSpeedX(5),
+	  maxSpeedY(5)
 {
 }
 
@@ -35,6 +37,42 @@ bool MoveableEntity::init(std::string file)
 
 void MoveableEntity::update()
 {
+	switch (dir) {
+	case ED_STOP:
+		break;
+	case ED_LEFT:
+		accelX = -0.8;
+		accelY = 0;
+		break;
+	case ED_RIGHT:
+		accelX = 0.8;
+		accelY = 0;
+		break;
+	case ED_UP:
+		accelX = 0;
+		accelY = 0.8;
+		break;
+	case ED_DOWN:
+		accelX = 0;
+		accelY = -0.8;
+		break;
+	default:
+	}
+
+	speedX += accelX * FPS::theFPS().getSpeedFactor();
+	speedY += accelY * FPS::theFPS().getSpeedFactor();
+
+	if(speedX > maxSpeedX)
+		speedX = maxSpeedX;
+	if(speedX < -maxSpeedX)
+		speedX = -maxSpeedX;
+	if(speedY > maxSpeedY)
+		speedY = maxSpeedY;
+	if(speedY < -maxSpeedY)
+		speedY = -maxSpeedY;
+
+	animate();
+	move(speedX, speedY);
 }
 
 
@@ -50,10 +88,30 @@ bool MoveableEntity::cleanUp()
 }
 
 
-void MoveableEntity::move(float x, float y)
+void MoveableEntity::move(float sx, float sy)
 {
-	if (x == 0 && y == 0)
+	if (sx == 0 && sy == 0)
 		return;
-	x *= FPS::theFPS().getSpeedFactor();
-	y *= FPS::theFPS().getSpeedFactor();
+	sx *= FPS::theFPS().getSpeedFactor();
+	sy *= FPS::theFPS().getSpeedFactor();
+}
+
+
+bool MoveableEntity::posValid(int x, int y)
+{
+	return true;
+}
+
+
+bool MoveableEntity::posValid(TileType type)
+{
+    if (TileType == TT_HO)
+    	return false;
+	return true;
+}
+
+
+bool MoveableEntity::posValid(Entity* ent, int x, int y)
+{
+	return true;
 }
