@@ -21,12 +21,19 @@ AnimationCtrl::~AnimationCtrl()
 }
 
 
-void AnimationCtrl::draw()
+void AnimationCtrl::update()
+{
+
+}
+
+
+void AnimationCtrl::draw(EntityType id, Direction dir,
+		unsigned int curFrame, int posX, int posY)
 {
 	switch (id) {
-	case pm:
+	case ET_PM:
 		switch (dir) {
-		case ED_STOP:
+		case D_STOP:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -36,22 +43,7 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_LEFT:
-			switch (curFrame) {
-			case 1:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-				break;
-			case 2:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-				break;
-			default:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-			}
-			break;
-		case ED_RIGHT:
+		case D_LEFT:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -66,7 +58,7 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_UP:
+		case D_RIGHT:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -81,7 +73,22 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_DOWN:
+		case D_UP:
+			switch (curFrame) {
+			case 1:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+				break;
+			case 2:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+				break;
+			default:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+			}
+			break;
+		case D_DOWN:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -101,9 +108,9 @@ void AnimationCtrl::draw()
 				posX, posY, 0, 0, 30, 30);
 		}
 		break;
-	case pw:
+	case ET_PW:
 		switch (dir) {
-		case ED_STOP:
+		case D_STOP:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -113,22 +120,7 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_LEFT:
-			switch (curFrame) {
-			case 1:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-				break;
-			case 2:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-				break;
-			default:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-			}
-			break;
-		case ED_RIGHT:
+		case D_LEFT:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -143,7 +135,7 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_UP:
+		case D_RIGHT:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -158,7 +150,22 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_DOWN:
+		case D_UP:
+			switch (curFrame) {
+			case 1:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+				break;
+			case 2:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+				break;
+			default:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+			}
+			break;
+		case D_DOWN:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -178,9 +185,9 @@ void AnimationCtrl::draw()
 				posX, posY, 0, 0, 30, 30);
 		}
 		break;
-	case pc:
+	case ET_PG:
 		switch (dir) {
-		case ED_STOP:
+		case D_STOP:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -190,22 +197,7 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_LEFT:
-			switch (curFrame) {
-			case 1:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-				break;
-			case 2:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-				break;
-			default:
-				Texture::draw(App::theApp().tex, App::theApp().ren,
-					posX, posY, 0, 0, 30, 30);
-			}
-			break;
-		case ED_RIGHT:
+		case D_LEFT:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -220,7 +212,7 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_UP:
+		case D_RIGHT:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,
@@ -235,7 +227,22 @@ void AnimationCtrl::draw()
 					posX, posY, 0, 0, 30, 30);
 			}
 			break;
-		case ED_DOWN:
+		case D_UP:
+			switch (curFrame) {
+			case 1:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+				break;
+			case 2:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+				break;
+			default:
+				Texture::draw(App::theApp().tex, App::theApp().ren,
+					posX, posY, 0, 0, 30, 30);
+			}
+			break;
+		case D_DOWN:
 			switch (curFrame) {
 			case 1:
 				Texture::draw(App::theApp().tex, App::theApp().ren,

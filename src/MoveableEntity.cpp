@@ -7,12 +7,12 @@
 
 
 #include "MoveableEntity.h"
-
 #include "FPS.h"
+#include "AnimationCtrl.h"
 
 
 MoveableEntity::MoveableEntity()
-	: dir(ED_STOP),
+	: dir(D_STOP),
 	  speedX(0),
 	  speedY(0),
 	  accelX(0),
@@ -37,26 +37,28 @@ bool MoveableEntity::init(std::string file)
 
 void MoveableEntity::update()
 {
+	Entity::update();
 	switch (dir) {
-	case ED_STOP:
+	case D_STOP:
 		break;
-	case ED_LEFT:
+	case D_LEFT:
 		accelX = -0.8;
 		accelY = 0;
 		break;
-	case ED_RIGHT:
+	case D_RIGHT:
 		accelX = 0.8;
 		accelY = 0;
 		break;
-	case ED_UP:
+	case D_UP:
 		accelX = 0;
 		accelY = 0.8;
 		break;
-	case ED_DOWN:
+	case D_DOWN:
 		accelX = 0;
 		accelY = -0.8;
 		break;
 	default:
+		;
 	}
 
 	speedX += accelX * FPS::theFPS().getSpeedFactor();
@@ -71,14 +73,15 @@ void MoveableEntity::update()
 	if(speedY < -maxSpeedY)
 		speedY = -maxSpeedY;
 
-	animate();
+//	animate();
 	move(speedX, speedY);
 }
 
 
 void MoveableEntity::draw()
 {
-
+	AnimationCtrl::draw(this->getId(), dir, this->ani.getCurFrame(),
+			this->getPosX(), this->getPosY());
 }
 
 
@@ -105,7 +108,7 @@ bool MoveableEntity::posValid(int x, int y)
 
 bool MoveableEntity::posValid(TileType type)
 {
-    if (TileType == TT_HO)
+    if (type == TT_HW)
     	return false;
 	return true;
 }

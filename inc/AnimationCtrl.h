@@ -10,21 +10,17 @@
 #define ANIMATIONCTRL_H_
 
 
+#include "Entity.h"
+#include "MoveableEntity.h"
+
+
 class AnimationCtrl {
 public:
 	AnimationCtrl();
 	virtual ~AnimationCtrl();
 
-	void draw();
-
-private:
-	EntityType id;
-	Direction dir;
-	int curFrame;
-	int posX;
-	int posY;
-	int width;
-	int height;
+	void update();
+	void draw(EntityType id, Direction dir, unsigned int curFrame, int posX, int posY);
 };
 
 

@@ -14,12 +14,12 @@
 #include "Tile.h"
 
 
-enum EntityDirection {
-	ED_STOP = 0,
-	ED_LEFT,
-	ED_RIGHT,
-	ED_UP,
-	ED_DOWN
+enum Direction {
+	D_STOP = 0,
+	D_LEFT,
+	D_RIGHT,
+	D_UP,
+	D_DOWN
 };
 
 
@@ -42,7 +42,7 @@ private:
     bool posValid(Entity* ent, int x, int y);
 
 private:
-    EntityDirection dir;
+    Direction dir;
     float speedX;
     float speedY;
     float accelX;

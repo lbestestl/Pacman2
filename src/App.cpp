@@ -83,6 +83,7 @@ void App::draw()
 
 bool App::cleanUp()
 {
+	map.cleanUp();
     SDL_DestroyTexture(tex);
     SDL_DestroyRenderer(ren);
     SDL_DestroyWindow(win);

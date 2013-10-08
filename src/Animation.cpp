@@ -41,3 +41,9 @@ void Animation::animate()
 	if (curFrame >= maxFrame - 1)
 		curFrame = 0;
 }
+
+
+const unsigned int Animation::getCurFrame()
+{
+	return curFrame;
+}

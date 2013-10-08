@@ -17,6 +17,7 @@ public:
 			unsigned int frameRate, unsigned long previousTime,
 			unsigned int maximumFrame);
 	void animate();
+	const unsigned int getCurFrame();
 
 private:
 	unsigned int curFrame;

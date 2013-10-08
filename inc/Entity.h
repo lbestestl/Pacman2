@@ -10,6 +10,8 @@
 #define ENTITY_H
 
 
+#include "Animation.h"
+
 #include <string>
 #include <SDL2/SDL.h>
 
@@ -45,16 +47,20 @@ public:
     virtual bool cleanUp();
 
     virtual bool interactive();
-    
-private:
-    void animate();
+
+    const EntityType getId();
+    const int getPosX();
+    const int getPosY();
+
+public:
+    Animation ani;
 
 private:
-    int id;
+    EntityType id;
     int posX;
     int posY;
-    int width;
-    int height;
+    unsigned int width;
+    unsigned int height;
 };
 
 

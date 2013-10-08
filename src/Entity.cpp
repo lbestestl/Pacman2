@@ -10,7 +10,7 @@
 
 
 Entity::Entity()
-	: id(0),
+	: id(ET_NONE),
 	  posX(0),
 	  posY(0),
 	  width(0),
@@ -33,6 +33,7 @@ bool Entity::init(std::string file)
 
 void Entity::update()
 {
+	ani.animate();
 }
 
 
@@ -54,7 +55,19 @@ bool Entity::interactive()
 }
 
 
-void Entity::animate()
+const EntityType Entity::getId()
 {
+	return id;
+}
 
+
+const int Entity::getPosX()
+{
+	return posX;
+}
+
+
+const int Entity::getPosY()
+{
+	return posY;
 }
