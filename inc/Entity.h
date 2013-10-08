@@ -14,6 +14,26 @@
 #include <SDL2/SDL.h>
 
 
+enum EntityType {
+	ET_NONE = 0,
+	ET_PM, // pacman
+	ET_PW, // pacwoman
+	ET_PG, // pacman giant
+	ET_RE, // red enemy(macky)
+	ET_PE, // pink enemy(micky)
+	ET_CE, // cyan enemy(mucky)
+	ET_OE, // orange enemy(mocky)
+	ET_TE, // crying-tears enemy
+	ET_IE, // invisible enemy
+	ET_NE, // little naked enemy
+	ET_SE, // snail enemy
+	ET_NP, // normal pellet (increase score)
+	ET_PP, // power pellet (reverse enemy)
+	ET_FI, // fruit item
+	ET_LI  // life item
+};
+
+
 class Entity {
 public:
     Entity();
@@ -35,7 +55,6 @@ private:
     int posY;
     int width;
     int height;
-    
 };
 
 

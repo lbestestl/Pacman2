@@ -11,14 +11,21 @@
 
 
 enum TileType {
-	TT_NONE = 0x00,
-	TT_HO = 0x10, // ─
-	TT_VO = 0x20, // │
-	TT_RD = 0x30, // ┌
-	TT_LD = 0x40, // ┐
-	TT_LU = 0x50, // ┘
-	TT_RU = 0x60, // └
-	TT_EXIT = 0xF0
+	TT_NONE = 0,
+	TT_PE, 	// pass player and enemies
+	TT_PO, 	// pass only player
+	TT_E0, 	// pass only Enemy
+	TT_HW, 	// horizontal wall	─
+	TT_VW, 	// vertical wall	│
+	TT_RDW,	// right down wall	┌
+	TT_LDW,	// left down wall	┐
+	TT_LUW,	// left up wall		┘
+	TT_RUW,	// right up wall	└
+	TT_HD, 	// hidden door
+	TT_NHD,	// normal horizontal door
+	TT_NVD,	// normal vertical door
+	TT_SHD,	// special horizontal door
+	TT_SVD 	// special vertical door
 };
 
 
