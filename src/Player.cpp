@@ -10,8 +10,7 @@
 
 
 Player::Player()
-	: score(0),
-	  life(0)
+	:
 {
 
 }

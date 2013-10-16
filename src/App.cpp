@@ -18,7 +18,8 @@ App::App()
     : isRunning(true),
       win(NULL),
       ren(NULL),
-      tex(NULL)
+      tex(NULL),
+      life(3)
 {
 }
 

@@ -24,8 +24,7 @@ public:
     bool cleanUp();
     
 private:
-    int score;
-    int life;
+
 };
 
 

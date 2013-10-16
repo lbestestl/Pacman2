@@ -12,6 +12,7 @@
 
 #include "Event.h"
 #include "Map.h"
+#include "Player.h"
 
 #include <SDL2/SDL_ttf.h>
 
@@ -43,6 +44,8 @@ private:
     bool isRunning;
 	SDL_Window* win;
 	Map map;
+	Player p1;
+	int life;
 };
 
 

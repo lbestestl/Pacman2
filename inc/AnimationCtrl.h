@@ -19,8 +19,8 @@ public:
 	AnimationCtrl();
 	virtual ~AnimationCtrl();
 
-	void update();
-	void draw(EntityType id, Direction dir, unsigned int curFrame, int posX, int posY);
+	static void update();
+	static void draw(EntityType id, Direction dir, unsigned int curFrame, int posX, int posY);
 };
 
 
