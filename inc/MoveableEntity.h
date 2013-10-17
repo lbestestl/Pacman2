@@ -35,6 +35,7 @@ public:
     virtual bool cleanUp();
 
     virtual void move(float x, float y);
+    void setDir(Direction dir);
 
 private:
     bool posValid(int speedX, int speedY);

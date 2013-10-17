@@ -10,7 +10,6 @@
 
 
 Player::Player()
-	:
 {
 
 }
@@ -31,12 +30,13 @@ bool Player::init(std::string file)
 
 void Player::update()
 {
+	MoveableEntity::update();
 }
 
 
 void Player::draw()
 {
-
+	MoveableEntity::draw();
 }
 
 

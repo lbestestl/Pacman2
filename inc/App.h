@@ -35,6 +35,7 @@ private:
     bool cleanUp();
 
     void onExit();
+    void onKeyPressed(SDL_Keysym symbol);
 
 public:
     SDL_Renderer* ren;

@@ -50,7 +50,9 @@ public:
 
     const EntityType getId();
     const int getPosX();
+    void setPosX(int posX);
     const int getPosY();
+    void setPosY(int posY);
 
 public:
     Animation ani;

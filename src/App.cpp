@@ -11,7 +11,6 @@
 #include "Texture.h"
 #include "Map.h"
 #include "FPS.h"
-#include <iostream>
 
 
 App::App()
@@ -58,10 +57,10 @@ bool App::init()
 
     SDL_RenderClear(ren);
 
-    if ((tex = Texture::load("./res/tileset.png", ren)) == NULL) {
+    if ((tex = Texture::load("./res/image/tileset.png", ren)) == NULL) {
         isRunning = false;
     }
-    map.init("./res/stage2.dpm");
+    map.init("./res/map/stage2.dpm");
 
     return isRunning;
 }
@@ -70,14 +69,16 @@ bool App::init()
 void App::update()
 {
 	FPS::theFPS().update();
-	std::cout<<FPS::theFPS().getSpeedFactor()<<std::endl;
+	p1.update();
 }
 
 
 void App::draw()
 {
 	//pacman은 20*20
+	SDL_RenderClear(ren);
     map.draw();
+    p1.draw();
     SDL_RenderPresent(ren);
 }
 

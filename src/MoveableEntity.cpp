@@ -9,6 +9,7 @@
 #include "MoveableEntity.h"
 #include "FPS.h"
 #include "AnimationCtrl.h"
+#include <iostream>
 
 
 MoveableEntity::MoveableEntity()
@@ -17,8 +18,8 @@ MoveableEntity::MoveableEntity()
 	  speedY(0),
 	  accelX(0),
 	  accelY(0),
-	  maxSpeedX(5),
-	  maxSpeedY(5)
+	  maxSpeedX(3),
+	  maxSpeedY(3)
 {
 }
 
@@ -40,6 +41,24 @@ void MoveableEntity::update()
 	Entity::update();
 	switch (dir) {
 	case D_STOP:
+		if (speedX > 0) {
+			accelX = -1;
+		} else if(speedX < 0) {
+			accelX =  1;
+		}
+		if(speedX < 2.0f && speedX > -2.0f) {
+			accelX = 0;
+			speedX = 0;
+		}
+		if (speedY > 0) {
+			accelY = -1;
+		} else if(speedY < 0) {
+			accelY =  1;
+		}
+		if(speedY < 2.0f && speedY > -2.0f) {
+			accelY = 0;
+			speedY = 0;
+		}
 		break;
 	case D_LEFT:
 		accelX = -0.8;
@@ -51,11 +70,11 @@ void MoveableEntity::update()
 		break;
 	case D_UP:
 		accelX = 0;
-		accelY = 0.8;
+		accelY = -0.8;
 		break;
 	case D_DOWN:
 		accelX = 0;
-		accelY = -0.8;
+		accelY = 0.8;
 		break;
 	default:
 		;
@@ -72,6 +91,8 @@ void MoveableEntity::update()
 		speedY = maxSpeedY;
 	if(speedY < -maxSpeedY)
 		speedY = -maxSpeedY;
+
+	std::cout<<speedX << ", "<<speedY<<std::endl;
 
 //	animate();
 	move(speedX, speedY);
@@ -97,6 +118,14 @@ void MoveableEntity::move(float sx, float sy)
 		return;
 	sx *= FPS::theFPS().getSpeedFactor();
 	sy *= FPS::theFPS().getSpeedFactor();
+	this->setPosX(this->getPosX() + sx);
+	this->setPosY(this->getPosY() + sy);
+}
+
+
+void MoveableEntity::setDir(Direction dir)
+{
+	this->dir = dir;
 }
 
 

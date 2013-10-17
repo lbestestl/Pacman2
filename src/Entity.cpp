@@ -67,7 +67,19 @@ const int Entity::getPosX()
 }
 
 
+void Entity::setPosX(int posX)
+{
+	this->posX = posX;
+}
+
+
 const int Entity::getPosY()
 {
 	return posY;
+}
+
+
+void Entity::setPosY(int posY)
+{
+	this->posY = posY;
 }
