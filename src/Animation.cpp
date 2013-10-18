@@ -9,6 +9,7 @@
 #include "Animation.h"
 
 #include <SDL2/SDL.h>
+#include <iostream>
 
 
 Animation::Animation()
@@ -16,7 +17,7 @@ Animation::Animation()
 	  frameInc(1),
 	  frameRate(100),
 	  prevTime(0),
-	  maxFrame(1)
+	  maxFrame(2) // curFrame = [0, maxFrame)
 {
 }
 
@@ -38,7 +39,7 @@ void Animation::animate()
 		return;
 	prevTime = SDL_GetTicks();
 	curFrame += frameInc;
-	if (curFrame >= maxFrame - 1)
+	if (curFrame >= maxFrame)
 		curFrame = 0;
 }
 

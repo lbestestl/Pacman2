@@ -38,7 +38,7 @@ public:
     void setDir(Direction dir);
 
 private:
-    bool posValid(int speedX, int speedY);
+    bool posValid(float posX, float posY);
     bool posValid(TileType tile);
     bool posValid(Entity* ent, int x, int y);
 

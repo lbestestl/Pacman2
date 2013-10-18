@@ -25,16 +25,19 @@ void App::onKeyPressed(SDL_Keysym s)
 {
 	switch (s.sym) {
 	case SDLK_LEFT:
-		p1.setDir(D_LEFT);
+		gi.getP1().setDir(D_LEFT);
 		break;
 	case SDLK_RIGHT:
-		p1.setDir(D_RIGHT);
+		gi.getP1().setDir(D_RIGHT);
 		break;
 	case SDLK_UP:
-		p1.setDir(D_UP);
+		gi.getP1().setDir(D_UP);
 		break;
 	case SDLK_DOWN:
-		p1.setDir(D_DOWN);
+		gi.getP1().setDir(D_DOWN);
+		break;
+	case SDLK_SPACE:
+		gi.getP1().setDir(D_STOP);
 		break;
 	default:
 		;

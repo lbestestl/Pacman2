@@ -16,6 +16,7 @@ static const int MARGIN_WIDTH = 10;
 static const int MARGIN_HEIGHT = 10;
 
 static const int TILE_SIZE = 20;
+static const int UNIT_SIZE = 30;
 
 static const int WINDOW_WIDTH = 800;
 static const int WINDOW_HEIGHT = 600;

@@ -10,7 +10,7 @@
 
 
 Entity::Entity()
-	: id(ET_NONE),
+	: id(ET_PW),
 	  posX(0),
 	  posY(0),
 	  width(0),
@@ -61,25 +61,25 @@ const EntityType Entity::getId()
 }
 
 
-const int Entity::getPosX()
+const float Entity::getPosX()
 {
 	return posX;
 }
 
 
-void Entity::setPosX(int posX)
+void Entity::setPosX(float posX)
 {
 	this->posX = posX;
 }
 
 
-const int Entity::getPosY()
+const float Entity::getPosY()
 {
 	return posY;
 }
 
 
-void Entity::setPosY(int posY)
+void Entity::setPosY(float posY)
 {
 	this->posY = posY;
 }

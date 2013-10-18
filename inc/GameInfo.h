@@ -20,6 +20,13 @@ public:
 	GameInfo();
 	virtual ~GameInfo();
 
+	bool init();
+	void update();
+	void draw();
+	bool cleanUp();
+
+	inline Player& getP1() {return p1;}
+
 private:
 	Map map;
 	Player p1;

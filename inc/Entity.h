@@ -27,10 +27,10 @@ enum EntityType {
 	ET_OE, // orange enemy(mocky)
 	ET_TE, // crying-tears enemy
 	ET_IE, // invisible enemy
-	ET_NE, // little naked enemy
+	ET_NE, // naked enemy
 	ET_SE, // snail enemy
 	ET_NP, // normal pellet (increase score)
-	ET_PP, // power pellet (reverse enemy)
+	ET_PP, // power pellet (pacman can defeat enemy)
 	ET_FI, // fruit item
 	ET_LI  // life item
 };
@@ -49,18 +49,18 @@ public:
     virtual bool interactive();
 
     const EntityType getId();
-    const int getPosX();
-    void setPosX(int posX);
-    const int getPosY();
-    void setPosY(int posY);
+    const float getPosX();
+    void setPosX(float posX);
+    const float getPosY();
+    void setPosY(float posY);
 
 public:
     Animation ani;
 
 private:
     EntityType id;
-    int posX;
-    int posY;
+    float posX;
+    float posY;
     unsigned int width;
     unsigned int height;
 };

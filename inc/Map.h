@@ -24,7 +24,8 @@ public:
 	const char getTileset(int x, int y);
 
 private:
-	char* tileset;
+	TileType* tileset;
+//	char* tileset;
 };
 
 

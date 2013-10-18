@@ -17,8 +17,7 @@ App::App()
     : isRunning(true),
       win(NULL),
       ren(NULL),
-      tex(NULL),
-      life(3)
+      tex(NULL)
 {
 }
 
@@ -60,7 +59,7 @@ bool App::init()
     if ((tex = Texture::load("./res/image/tileset.png", ren)) == NULL) {
         isRunning = false;
     }
-    map.init("./res/map/stage2.dpm");
+    gi.init();
 
     return isRunning;
 }
@@ -69,7 +68,7 @@ bool App::init()
 void App::update()
 {
 	FPS::theFPS().update();
-	p1.update();
+	gi.update();
 }
 
 
@@ -77,15 +76,14 @@ void App::draw()
 {
 	//pacman은 20*20
 	SDL_RenderClear(ren);
-    map.draw();
-    p1.draw();
+	gi.draw();
     SDL_RenderPresent(ren);
 }
 
 
 bool App::cleanUp()
 {
-	map.cleanUp();
+	gi.cleanUp();
     SDL_DestroyTexture(tex);
     SDL_DestroyRenderer(ren);
     SDL_DestroyWindow(win);

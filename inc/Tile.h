@@ -14,7 +14,7 @@ enum TileType {
 	TT_NONE = 0,
 	TT_PE, 	// pass player and enemies
 	TT_PO, 	// pass only player
-	TT_E0, 	// pass only Enemy
+	TT_EO, 	// pass only Enemy
 	TT_HW, 	// horizontal wall	─
 	TT_VW, 	// vertical wall	│
 	TT_RDW,	// right down wall	┌
